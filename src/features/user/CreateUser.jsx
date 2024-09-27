@@ -8,6 +8,7 @@ const CreateUser = () => {
   const handleClick = (e) => {
     e.preventDefault();
     navigate("/menu");
+    window.scrollTo(0, 0);
   };
 
   return (

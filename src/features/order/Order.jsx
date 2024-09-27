@@ -50,7 +50,7 @@ const Order = () => {
           </li>
         ))}
       </ul>
-      <div className="bg-yellow-200/70 text-lg font-montserrat px-6 py-4 mt-4 font-medium">
+      <div className="bg-green-200/70 text-lg font-montserrat px-6 py-4 mt-4 font-medium">
         <p className="text-zinc-600">
           Price pizza: <span className="ml-2"> ${orderPrice} </span>
         </p>

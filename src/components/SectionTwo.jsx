@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 import CreateUser from "../features/user/CreateUser";
 
 const SectionTwo = ({ orderRef }) => {
@@ -13,10 +13,6 @@ const SectionTwo = ({ orderRef }) => {
       <CreateUser />
     </div>
   );
-};
-
-SectionTwo.propTypes = {
-  orderRef: PropTypes.func.isRequired,
 };
 
 export default SectionTwo;

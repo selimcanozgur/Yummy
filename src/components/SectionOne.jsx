@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 
 const SectionOne = ({ handleScroll }) => {
   return (
@@ -20,10 +20,6 @@ const SectionOne = ({ handleScroll }) => {
       </div>
     </section>
   );
-};
-
-SectionOne.propTypes = {
-  handleScroll: PropTypes.func.isRequired,
 };
 
 export default SectionOne;

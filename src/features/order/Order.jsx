@@ -1,8 +1,11 @@
+import OrderItem from "./OrderItem";
 import { useLoaderData } from "react-router-dom";
 import { formatDate } from "../../utils/helpers";
+import UpdateOrder from "./UpdateOrder";
 
 const Order = () => {
   const order = useLoaderData();
+
   const {
     id,
     estimatedDelivery,
@@ -12,10 +15,9 @@ const Order = () => {
     priorityPrice,
     status,
   } = order;
-  console.log(order);
 
   return (
-    <div className="mx-auto w-[700px] mt-8">
+    <div className="mx-auto w-[700px] pt-8">
       <div className="flex justify-between items-center">
         <p className="font-poppins font-semibold text-xl text-zinc-700">
           Oder #{id} status
@@ -38,16 +40,8 @@ const Order = () => {
         </p>
       </div>
       <ul>
-        {cart.map((order) => (
-          <li className="flex justify-between py-4" key={order.pizzaId}>
-            <div>
-              <p>
-                <b className="mr-2">{order.quantity}x</b>
-                {order.name}
-              </p>
-            </div>
-            <p>${order.totalPrice}.00</p>
-          </li>
+        {cart.map((item) => (
+          <OrderItem item={item} key={item.pizzaId} />
         ))}
       </ul>
       <div className="bg-green-200/70 text-lg font-montserrat px-6 py-4 mt-4 font-medium">
@@ -60,11 +54,11 @@ const Order = () => {
         <p>
           To pay on delivery:{" "}
           <span className="ml-2 font-semibold">
-            {" "}
             ${orderPrice + priorityPrice}{" "}
           </span>
         </p>
       </div>
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 };

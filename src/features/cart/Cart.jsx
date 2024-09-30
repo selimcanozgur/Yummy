@@ -2,8 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { clearCart, getCart } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
-import DeleteItem from "./DeleteItem";
-import UpdateItem from "./UpdateItem";
+import CartItem from "./CartItem";
 
 const Cart = () => {
   const { username } = useSelector((state) => state.user);
@@ -20,12 +19,7 @@ const Cart = () => {
       <p>Your cart, {username} </p>
       <ul>
         {cart.map((pizza) => (
-          <li className="flex gap-2" key={pizza.pizzaId}>
-            <p>{pizza.quantity}x</p>
-            <p>{pizza.name}</p>
-            <UpdateItem pizzaId={pizza.pizzaId} />
-            <DeleteItem pizzaId={pizza.pizzaId} />
-          </li>
+          <CartItem key={pizza.pizzaId} pizza={pizza} />
         ))}
       </ul>
       <button>

@@ -5,14 +5,10 @@ import { IoBagOutline } from "react-icons/io5";
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {
-  getTotalCartPrice,
-  getTotalCartQuantity,
-} from "../features/cart/cartSlice";
+import { getTotalCartQuantity } from "../features/cart/cartSlice";
 
 function Header() {
   const totalCartQuantity = useSelector(getTotalCartQuantity);
-  const totalCartPrice = useSelector(getTotalCartPrice);
 
   return (
     <header className="w-full h-[110px] flex justify-around items-center shadow-md fixed top-0 bg-white z-30">

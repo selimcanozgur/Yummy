@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
+
 import { useDispatch } from "react-redux";
 import { increaseItemQuantity, decreaseItemQuantity } from "./cartSlice";
 
-const UpdateItem = ({ pizzaId }) => {
+const UpdateItem = ({ pizzaId, currentQuantity }) => {
   const dispatch = useDispatch();
   return (
     <div className="flex gap-2 text-lg font-bold text-white">
@@ -11,6 +13,7 @@ const UpdateItem = ({ pizzaId }) => {
       >
         -
       </button>
+      <span className="text-zinc-900 font-medium">{currentQuantity}</span>
       <button
         className="bg-green-400 rounded-full w-8 h-8"
         onClick={() => dispatch(increaseItemQuantity(pizzaId))}

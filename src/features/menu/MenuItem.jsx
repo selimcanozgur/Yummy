@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
+
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
+import UpdateItem from "../cart/UpdateItem";
 
 const MenuItem = ({ pizza }) => {
   const dispatch = useDispatch();
-  const { imageUrl, ingredients, name, soldOut, unitPrice, id } = pizza;
+  const { imageUrl, ingredients, name, unitPrice, id } = pizza;
 
   const currentQuantity = useSelector(getCurrentQuantityById(id));
   const isInCart = currentQuantity > 0;
@@ -25,11 +28,16 @@ const MenuItem = ({ pizza }) => {
       <div className="flex w-[600px] justify-between items-center">
         <div>
           <p className="font-semibold">{name}</p>
-          <p>{ingredients}</p>
+          <p>{ingredients.join(", ")}</p>
           <p className="text-green-500 font-semibold">${unitPrice}</p>
         </div>
         <div>
-          {isInCart && <DeleteItem pizzaId={id} />}
+          {isInCart && (
+            <div className="flex gap-4 items-center">
+              <UpdateItem pizzaId={id} currentQuantity={currentQuantity} />
+              <DeleteItem pizzaId={id} />
+            </div>
+          )}
           {!isInCart && (
             <button
               onClick={handleAddToCart}

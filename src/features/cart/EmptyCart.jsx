@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const EmptyCart = () => {
   return (
-    <div className="flex justify-center gap-4">
+    <div className="flex flex-col items-center gap-4 pt-24">
       <p className="font-montserrat font-semibold text-lg">
         Your cart has been cleared
       </p>

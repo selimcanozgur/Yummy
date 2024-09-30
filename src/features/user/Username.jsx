@@ -6,7 +6,7 @@ const Username = () => {
   if (!username) return null;
 
   return (
-    <p className="font-montserrat font-medium tracking-wide capitalize">
+    <p className="font-montserrat font-medium tracking-wide capitalize hidden md:block">
       {username}
       <span>&#39;s cart</span>
     </p>

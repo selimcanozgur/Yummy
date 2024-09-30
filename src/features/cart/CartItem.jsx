@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 import UpdateItem from "./UpdateItem";
-import DeleteItem from "./DeleteItem";
 import { useSelector } from "react-redux";
 import { getCurrentQuantityById } from "./cartSlice";
 
@@ -10,14 +9,17 @@ const CartItem = ({ pizza }) => {
   console.log(pizza);
   const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
   return (
-    <li className="flex gap-2" key={pizzaId}>
-      <p>{quantity}x</p>
-      <p>{name}</p>
-      <p>{totalPrice}</p>
-
-      <UpdateItem pizzaId={pizzaId} currentQuantity={currentQuantity} />
-      <DeleteItem pizzaId={pizzaId} />
-    </li>
+    <>
+      <li
+        className="flex gap-6 md:gap-12 mb-4 bg-yellow-100 px-6 py-4 rounded-lg"
+        key={pizzaId}
+      >
+        <p>{quantity}x</p>
+        <p>{name}</p>
+        <p>${totalPrice}</p>
+        <UpdateItem pizzaId={pizzaId} currentQuantity={currentQuantity} />
+      </li>
+    </>
   );
 };
 

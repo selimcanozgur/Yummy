@@ -5,11 +5,11 @@ const Logo = () => {
     <div>
       <Link className="flex items-center gap-2" to="/">
         <img
-          className="w-10 md:w-14"
+          className="w-8 md:w-14"
           src="/img/yummy-logo.png"
           alt="yummy-logo"
         />
-        <h1 className="text-lg md:text-3xl uppercase text-red-500 font-montserrat font-semibold">
+        <h1 className="text-md md:text-3xl uppercase text-red-500 font-montserrat font-semibold">
           Yummy
         </h1>
       </Link>

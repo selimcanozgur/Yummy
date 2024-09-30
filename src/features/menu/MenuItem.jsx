@@ -24,8 +24,8 @@ const MenuItem = ({ pizza }) => {
   };
   return (
     <li className="flex gap-4 py-2 font-montserrat">
-      <img className="w-24 rounded-md" src={imageUrl} alt={name} />
-      <div className="flex w-[600px] justify-between items-center">
+      <img className="w-16 md:w-24 rounded-md" src={imageUrl} alt={name} />
+      <div className="flex flex-col md:flex-row md:w-[600px] justify-between md:items-center">
         <div>
           <p className="font-semibold">{name}</p>
           <p>{ingredients.join(", ")}</p>
@@ -41,7 +41,7 @@ const MenuItem = ({ pizza }) => {
           {!isInCart && (
             <button
               onClick={handleAddToCart}
-              className="bg-green-400  px-4 py-1 rounded-lg font-semibold text-white font-montserrat"
+              className="bg-green-400 px-2 py-1 text-xs md:text-base md:px-4 rounded-lg font-semibold text-white font-montserrat"
             >
               Add to cart
             </button>

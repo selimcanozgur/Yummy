@@ -2,6 +2,7 @@ import { Form, useActionData, useNavigation } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaRegAddressCard } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const fakeCart = [
   {
@@ -30,6 +31,7 @@ const fakeCart = [
 function CreateOrder() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
+  const { username } = useSelector((state) => state.user);
 
   const formErros = useActionData();
 
@@ -50,6 +52,7 @@ function CreateOrder() {
             type="text"
             name="customer"
             required
+            defaultValue={username}
           />
         </div>
 

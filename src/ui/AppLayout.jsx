@@ -10,7 +10,7 @@ function AppLayout() {
     <div>
       {isLoading && <Loader />}
       <Header />
-      <main>
+      <main className="mt-28">
         <Outlet />
       </main>
     </div>

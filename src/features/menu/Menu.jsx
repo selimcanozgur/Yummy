@@ -5,7 +5,7 @@ const Menu = () => {
   const pizza = useLoaderData();
 
   return (
-    <div className="flex justify-center mt-6">
+    <div className="flex justify-center pt-6">
       <ul>
         {pizza.map((pizza) => (
           <MenuItem key={pizza.id} pizza={pizza} />
